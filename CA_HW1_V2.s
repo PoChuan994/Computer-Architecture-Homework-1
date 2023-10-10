@@ -1,10 +1,10 @@
 .data
     t1_u: .word 0x0f000000        # upper bits of test data 1, test_data1[0~31]
-    t1_l: .word 0x0        # lower bits of test data 2, test_data2[32~63]
-    t2_u: .word 0x0
-    t2_l: .word 0x0
+    t1_l: .word 0x00000000        # lower bits of test data 2, test_data2[32~63]
+    t2_u: .word 0x00000000
+    t2_l: .word 0x00000000
     t3_u: .word 0x01234567
-    t3_l: .word 0x89abcdef    
+    t3_l: .word 0x89abcdef
 .text
 main:
     # initial setting
@@ -25,10 +25,19 @@ main_for_loop:
     # call finding_string procedure
     #mv   a0, s0        # a0 = & test_data_1_upper
     jal   ra, fs
+    li    a7, 1
+    ecall
+    li    a0, 0
+    li    a7, 11
+    ecall
+       
     addi  s1, s1, 1
     addi  s0, s0, 8
     blt   s1, s2, -12
+    li    a7, 11
+    ecall
     j     Exit
+    
 
 fs:
     addi  sp, sp, -16
