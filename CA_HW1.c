@@ -40,8 +40,10 @@ int find_string(uint64_t x, int n){
 }
 
 int main() {
-    // uint64_t test_data[] = {0x0123456789abcdef, 0x876543210fedcba9, 0xdeadbeefcafecafe};
-    uint64_t test_data[] = {0x0123456789abcdef, 0x0111000000000000, 0x0000000000f00000};
+    
+    uint64_t test_data[] = {0x0f00000000000000, 
+                            0x0000000000000000, 
+                            0x0123456789abcdef};
 
     for (int i = 0; i < 3; i++) {
         uint64_t x = test_data[i];
