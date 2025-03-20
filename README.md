@@ -1,3 +1,6 @@
-# Computer-Architecture-Homework-1
-- CA_HW1_V2 is modified from CA_HW1
-- More detailed description is available at [here](https://hackmd.io/fcLwVbDrQ--hS-a9NgSQBw)
+# Introduction
+- This project was developed in RISC-V ISA.
+- This project used Counting Leading Zero (CLZ) algorithm to find 1-bits of a string.
+- This topic is suitable for disk allocation, especially for disk compaction.
+# Implementation
+
